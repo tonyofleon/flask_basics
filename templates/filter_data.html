@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies Durations - Filters</title>
+    <!-- <link rel="stylesheet" href="/static/css/styles.css"> -->
+    <link rel="stylesheet" href="{{    url_for('static',filename='css/styles.css')   }}">
+  </head>
+  <boday>
+    <h1>This collections belongs to {{name}}</h1>
+    <h3>Path to css file: {{url_for('static',filename='css/styles.css')}}</h3>
+
+
+    {%for movie,duration in movies | dictsort (false,'value')%}
+    <ul>
+      <li>{{movie|title}}:{{duration|round(1)}}</li>
+    </ul>
+    {%endfor%}
+
+  </body>
+</html>
